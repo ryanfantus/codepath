@@ -6,15 +6,16 @@ Time spent: **X** hours spent in total
 
 ## Pentesting Report
 
-1. (Required) Vulnerability Name or ID
-  - [x] Summary: CVE-2017-14726 - Stored Cross-Site scripting vulnerability in WordPress 4.8
+1. CVE-2017-14726 - WordPress 4.2.3-4.8.1 - Authenticated Cross-Site Scripting (XSS) in Visual Editor
+  - [x] Summary: Before version 4.8.2, WordPress was vulnerable to a cross-site scripting attack via shortcodes in the TinyMCE visual editor.
     - Vulnerability types: Cross-Site Scripting
     - Tested in version: 4.8
     - Fixed in version: 4.8.2
   - [x] GIF Walkthrough: <img src="CVE-2017-14726.gif" width="800">
   - [x] Steps to recreate: Create a new post. Use the 'text' editor, instead of visual editor, and inject XSS - as an example, use `<img src=1 onerror=alert(1)>`
   - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+    - [Link 1](https://core.trac.wordpress.org/browser/trunk/src/wp-includes/js/mce-view.js?rev=41395)
+    - [Link 2](https://core.trac.wordpress.org/browser/trunk/src/wp-includes/script-loader.php?rev=41395)
 1. (Required) Vulnerability Name or ID
   - [ ] Summary: 
     - Vulnerability types:
