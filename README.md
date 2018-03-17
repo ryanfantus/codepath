@@ -7,10 +7,10 @@ Time spent: **X** hours spent in total
 ## Pentesting Report
 
 1. (Required) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
+  - [x] Summary: CVE-2017-14726 - Stored Cross-Site scripting vulnerability in WordPress 4.8
+    - Vulnerability types: Cross-Site Scripting
+    - Tested in version: 4.8
+    - Fixed in version: 4.8.2
   - [ ] GIF Walkthrough: 
   - [ ] Steps to recreate: 
   - [ ] Affected source code:
