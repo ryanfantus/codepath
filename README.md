@@ -12,7 +12,7 @@ Time spent: **X** hours spent in total
     - Tested in version: 4.8
     - Fixed in version: 4.8.2
   - [x] GIF Walkthrough: <img src="CVE-2017-14726.gif" width="800">
-  - [ ] Steps to recreate: 
+  - [x] Steps to recreate: Create a new post. Use the 'text' editor, instead of visual editor, and inject XSS - as an example, use `<img src=1 onerror=alert(1)>`
   - [ ] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
 1. (Required) Vulnerability Name or ID
