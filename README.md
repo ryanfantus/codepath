@@ -13,7 +13,7 @@ Time spent: **12** hours spent in total
     - Fixed in version: 4.8.2
   - [x] GIF Walkthrough: <img src="CVE-2017-14726.gif" width="800">
   - [x] Steps to recreate: Create a new post. Use the 'text' editor, instead of visual editor, and inject XSS - as an example, use `<img src=1 onerror=alert(1)>`
-  - [ ] Affected source code:
+  - [x] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/trunk/src/wp-includes/js/mce-view.js?rev=41395)
     - [Link 2](https://core.trac.wordpress.org/browser/trunk/src/wp-includes/script-loader.php?rev=41395)
 1. OVE-20160717-0003 - WordPress <=4.5.3 - WordPress audio playlist functionality is affected by Cross-Site Scripting
