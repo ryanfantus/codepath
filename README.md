@@ -16,15 +16,15 @@ Time spent: **X** hours spent in total
   - [ ] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/trunk/src/wp-includes/js/mce-view.js?rev=41395)
     - [Link 2](https://core.trac.wordpress.org/browser/trunk/src/wp-includes/script-loader.php?rev=41395)
-1. (Required) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+1. OVE-20160717-0003 - WordPress <=4.5.3 - WordPress audio playlist functionality is affected by Cross-Site Scripting
+  - [x] Summary: A malicious MP3 file, uploaded to WordPress and used in a playlist, can trigger cross-site scripting.
+    - Vulnerability types: Cross-Site Scripting
+    - Tested in version: 4.4, 4.5.3
+    - Fixed in version: 4.7.3
+  - [x] GIF Walkthrough: <img src="CVE-2017-6819.gif" width="800">
+  - [x] Steps to recreate: Upload malicious mp3 - https://www.securify.nl/advisory/SFY20160742/xss.mp3 for example - as media. Createa a new post. In the new post, create a playlist. Use malicious mp3 for playlist creation. Save the playlist, save the new post, and open the new post to view it. The XSS will execute.
+  - [x] Affected source code:
+    - [Link 1](https://core.trac.wordpress.org/browser/branches/4.4/src/wp-includes/media.php#L2062)
 1. (Required) Vulnerability Name or ID
   - [ ] Summary: 
     - Vulnerability types:
