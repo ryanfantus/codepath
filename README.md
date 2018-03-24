@@ -1,6 +1,6 @@
 # Project 7 - WordPress Pentesting
 
-Time spent: **X** hours spent in total
+Time spent: **12** hours spent in total
 
 > Objective: Find, analyze, recreate, and document **five vulnerabilities** affecting an old version of WordPress
 
@@ -25,37 +25,19 @@ Time spent: **X** hours spent in total
   - [x] Steps to recreate: Upload malicious mp3 - https://www.securify.nl/advisory/SFY20160742/xss.mp3 for example - as media. Createa a new post. In the new post, create a playlist. Use malicious mp3 for playlist creation. Save the playlist, save the new post, and open the new post to view it. The XSS will execute.
   - [x] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/branches/4.4/src/wp-includes/media.php#L2062)
-1. (Required) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Optional) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Optional) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php) 
+1. CVE-2017-5487 - WordPress <= 4.7 - WordPress username enumeration possible via REST API
+  - [x] Summary: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php in the REST API implementation in WordPress 4.7 before 4.7.1 does not properly restrict listings of post authors, which allows remote attackers to obtain sensitive information via a wp-json/wp/v2/users request.
+    - Vulnerability types: User Enumeration
+    - Tested in version: 4.4, 4.5.3
+    - Fixed in version: 4.7.1
+  - [x] GIF Walkthrough: <img src="UserEnumeration.gif" width="800">
+  - [x] Steps to recreate: Run `wpscan --url <WordPressURL> --enumerate u` against a vulnerable WordPress server. 
+  - [x] Affected source code:
+    - [Link 1](https://core.trac.wordpress.org/browser/branches/4.7/src/wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php#L258)
 
 ## Assets
 
-List any additional assets, such as scripts or files
+The only additional asset used in these penetration tests was the `wpscan` package - https://wpscan.org/
 
 ## Resources
 
@@ -66,11 +48,11 @@ GIFs created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while doing the work
+The most challenging thing encountered here was trying to reproduce reported issues written as problem descriptions, but without specifics. The Cross-Site Scripting exploits required changing some of how core WordPress was configured, because it was not displaying the pages I created.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2018] [Ryan Fantus]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
